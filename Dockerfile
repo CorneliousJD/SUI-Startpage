@@ -3,5 +3,5 @@ LABEL maintainer="Jeroen Pardon"
 
 EXPOSE 80
 
+VOLUME /usr/share/nginx/html
 COPY . /usr/share/nginx/html
-ADD . /usr/share/nginx/html
