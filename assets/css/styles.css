@@ -18,6 +18,7 @@ body{
 	padding: 0;
 	webkit-font-smoothing: antialiased;
 	width: 100vw;
+	overflow-x: hidden; /* dirty hack to hide horizontal scrollbars */
 }
 
 *,
