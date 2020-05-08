@@ -7,8 +7,6 @@ Note: this was forked for the purpose of triggering builds at dockerhub for an u
 
 [More screenshots](https://imgur.com/a/FDVRIyw)
 
-### Deploy with Docker compose
-
 #### Changing color themes
  - Click the options button on the left bottom
 
