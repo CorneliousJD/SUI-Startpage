@@ -1,3 +1,5 @@
+Note: this was forked for the purpose of triggering builds at dockerhub for an unRAID docker container template.
+
 ## SUI
 *a startpage for your server and / or new tab page*
 
