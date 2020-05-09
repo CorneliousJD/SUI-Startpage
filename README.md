@@ -1,4 +1,5 @@
 Note: this was forked for the purpose of triggering builds at dockerhub for an unRAID docker container template.
+I've also now started making slight modifications of this per request of users and some of my own findings as well.
 
 ## SUI
 *a startpage for your server and / or new tab page*
@@ -15,14 +16,14 @@ Add your apps by editing apps.json:
 
     {
 	    "apps" : [
-		    {"name":"Name of app 1","url":"sub1.example.com","icon":"icon-name"},
-		    {"name":"Name of app 2","url":"sub2.example.com","icon":"icon-name"}
+		    {"name":"Name of app 1","url":"https://sub1.example.com","icon":"icon-name"},
+		    {"name":"Name of app 2","url":"https://sub2.example.com","icon":"icon-name"}
 	    ]
     }
 
 Please note:
 
- - No `http://` in the URL
+ - You must start URLs with http:// or https://
  - No `,` at the end of the last app's line
  - Find the names  of icons to use at [Material Design Icons](https://materialdesignicons.com/)
 
@@ -65,7 +66,7 @@ Add names for the categories you wish to define and add the bookmarks for each c
 
 Please note:
 
- - No `http://` in the URL
+ - You must start URLs with http:// or https://
  - No `,` at the end of the last bookmark in a category and at the end of the last category
 
 
