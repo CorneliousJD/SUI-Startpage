@@ -1,11 +1,5 @@
 #!/bin/sh
 
-#Old Code to copy files. Cleanup later.
-#if [ ! -f /usr/share/nginx/html/index.html ]; then
-#cp /usr/share/holding/*.* /usr/share/nginx/html
-#cp -R /usr/share/holding/assets /usr/share/nginx/html
-#fi
-
 #check for existing files, copy them into place if needed.
 if [ ! -f /usr/share/nginx/html/index.html ]; then
 cp /usr/share/holding/index.html /usr/share/nginx/html/index.html
