@@ -1,24 +1,45 @@
 #!/bin/sh
 
-#check for existing index.html file, if exists leave all alone, otherise copy default files.
+#Old Code to copy files. Cleanup later.
+#if [ ! -f /usr/share/nginx/html/index.html ]; then
+#cp /usr/share/holding/*.* /usr/share/nginx/html
+#cp -R /usr/share/holding/assets /usr/share/nginx/html
+#fi
+
+#check for existing files, copy them into place if needed.
 if [ ! -f /usr/share/nginx/html/index.html ]; then
-cp /usr/share/holding/*.* /usr/share/nginx/html
-cp -R /usr/share/holding/assets /usr/share/nginx/html
+cp /usr/share/holding/index.html /usr/share/nginx/html/index.html
 fi
 
-#check for favicon and copy it in if it doesn't exist
+if [ ! -f /usr/share/nginx/html/apps.json ]; then
+cp /usr/share/holding/apps.json /usr/share/nginx/html/apps.json
+fi
+
+if [ ! -f /usr/share/nginx/html/links.json ]; then
+cp /usr/share/holding/links.json /usr/share/nginx/html/links.json
+fi
+
+if [ ! -f /usr/share/nginx/html/providers.json ]; then
+cp /usr/share/holding/providers.json /usr/share/nginx/html/providers.json
+fi
+
 if [ ! -f /usr/share/nginx/html/favicon.ico ]; then
 cp /usr/share/holding/favicon.ico /usr/share/nginx/html/favicon.ico
 fi
 
+#Check assets folder, copy it in if it doesn't exist.
+if [ ! -d /usr/share/nginx/html/assets ]; then
+cp -R /usr/share/holding/assets /usr/share/nginx/html
+fi
+
 #remove uncessary files
-if [ ! -f /usr/share/nginx/html/License.md ]; then
+if [ -f /usr/share/nginx/html/License.md ]; then
 rm /usr/share/nginx/html/License.md
 fi
-if [ ! -f rm /usr/share/nginx/html/README.md ]; then
+if [ -f /usr/share/nginx/html/README.md ]; then
 rm /usr/share/nginx/html/README.md
 fi
-if [ ! -f rm rm /usr/share/nginx/html/start.sh ]; then
+if [ -f /usr/share/nginx/html/start.sh ]; then
 rm /usr/share/nginx/html/start.sh
 fi
 
