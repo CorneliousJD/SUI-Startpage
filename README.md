@@ -69,6 +69,27 @@ Please note:
  - You must start URLs with http:// or https://
  - No `,` at the end of the last bookmark in a category and at the end of the last category
 
+#### Search Providers
+Add your providers by editing assets/js/search.js starting at line 59:
+
+Here is an example of one added with /z as the triggeer, and searching a test domain.
+You will also want to edit providers.json to show your new provider in the web interface as well.
+
+```
+function search(text) {
+    var option = text.substr(1, text.indexOf(' ') - 1) || text.substr(1);
+    var subtext = text.substr(2 + option.length);
+    if (text[0] === '/') {
+        if (text.indexOf(' ') > -1) {
+            switch (option) {
+                case "z":
+                    window.location = "https://www.testdomaon.com/search/all/" + subtext;
+                    break;
+		case "am":
+                    window.location = "https://www.allmusic.com/search/all/" + subtext;
+                    break;
+```
+Add names for the categories you wish to define and add the bookmarks for each category.
 
 #### Color themes
 These can be added or customized in the themer.js file. When changing the name of a theme or adding one, make sure to edit this section in index.html accordingly:
